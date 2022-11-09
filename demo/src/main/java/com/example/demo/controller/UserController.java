@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.vo.Page;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,8 +13,8 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    @Resource
-    UserMapper userMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     @GetMapping
     public List<User> getUser() {
